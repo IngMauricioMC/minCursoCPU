@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 03</title>
+</head>
+<body>
+    <div id="app"> 
+        <!-- <input type="text" v-model="opcao"> {{ opcao }} -->
+        <input type="text" v-model="opcao">
+        <div v-for="pokemon in pokemons">
+            <img v-if='opcao == pokemon.id' v-bind:src="pokemon.imgSrc" v-bind:title="pokemon.imgTitle">
+        </div>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script>
+        new Vue({
+            el: "#app",
+            data : {
+                pokemons : [
+                    {id : 1, imgSrc : '001.png', imgTitle : "Bulbasaur"},
+                    {id : 2, imgSrc : '002.png', imgTitle : "Ivysaur"},
+                    {id : 3, imgSrc : '003.png', imgTitle : "Venusaur"},
+                ],
+                opcao : '',
+            },
+            methods:{
+            },
+        });
+    </script>
+
+</body>
+</html>
